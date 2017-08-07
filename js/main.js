@@ -465,9 +465,9 @@ function dblNewFile(obj) {
                 //ES6 模板框架 可以用webpack转译ES5
                 kou.innerHTML =
                     '<div class="fox">'+
-                    '<span>-</span>'+
-                    '<span>口</span>'+
-                    '<span>X</span>'+
+                    '<span></span>'+
+                    '<span></span>'+
+                    '<span></span>'+
                     '</div>'+
                     '<div class="urls">'+
                     '<input type="text" class="ur"/>'+

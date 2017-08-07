@@ -42,7 +42,7 @@ gobox();
 
 //--------------------------日历
 
-window.onload = function () {
+function time() {
 
     var box = document.querySelector('#box');
     var uls = box.querySelectorAll('ul');
@@ -255,7 +255,7 @@ window.onload = function () {
 
 }
 
-
+time();
 function log(i) {
     return console.log(i);
 };
@@ -643,87 +643,85 @@ function inter() {
         ifra.src = '';
         offon = true;
     };
-
     var interTit = document.getElementById('interTit');
-    var L = null;
-    var T = null;
-    // interTit.onmousedown = function (ev) {
-    //     var ev = ev || window.event;
-    //     L = ev.clientX - interTit.offsetLeft;
-    //     R = ev.clientY - interTit.offsetTop;
-    //     document.onmousemove = function (ev) {
-    //         var ev = ev || window.event;
-    //         intCon.style.left = ev.clientX - L+'px';
-    //         intCon.style.top = ev.clientY - L+'px';
-    //     }
-    //     document.onmouseup = function () {
-    //         document.onmousemove = null;
-    //         document.onmouseup = null;
-    //     }
-    //     return false;
-    // }
+    interTit.onmousedown = function (ev) {
+        var ev = ev || window.event;
+        var L = ev.clientX - intCon.offsetLeft;
+        var T = ev.clientY - intCon.offsetTop;
+        document.onmousemove = function (ev) {
+            var ev = ev || window.event;
+
+            intCon.style.left = ev.clientX - L+'px';
+            intCon.style.top = ev.clientY - T+'px';
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+        return false;
+    }
 
 }
 inter();
-var intaCon = document.getElementById('internet');
-var interTit = document.getElementById('interTit');
+// var intaCon = document.getElementById('internet');
+// var interTit = document.getElementById('interTit');
 
 
-var params = {
-    left: 0,
-    top: 0,
-    currentX: 0,
-    currentY: 0,
-    flag: false
-};
-var getCss = function(o,key){
-    return o.currentStyle? o.currentStyle[key] : document.defaultView.getComputedStyle(o,false)[key];
-};
-
-var startDrag = function(bar, target, callback){
-    if(getCss(target, "left") !== "auto"){
-        params.left = getCss(target, "left");
-    }
-    if(getCss(target, "top") !== "auto"){
-        params.top = getCss(target, "top");
-    }
-    bar.onmousedown = function(event){
-        params.flag = true;
-        if(!event){
-            event = window.event;
-            bar.onselectstart = function(){
-                return false;
-            }
-        }
-        var e = event;
-        params.currentX = e.clientX;
-        params.currentY = e.clientY;
-    };
-    document.onmouseup = function(){
-        params.flag = false;
-        if(getCss(target, "left") !== "auto"){
-            params.left = getCss(target, "left");
-        }
-        if(getCss(target, "top") !== "auto"){
-            params.top = getCss(target, "top");
-        }
-    };
-    document.onmousemove = function(event){
-        var e = event ? event: window.event;
-        if(params.flag){
-            var nowX = e.clientX, nowY = e.clientY;
-            var disX = nowX - params.currentX, disY = nowY - params.currentY;
-            target.style.left = parseInt(params.left) + disX + "px";
-            target.style.top = parseInt(params.top) + disY + "px";
-            if (event.preventDefault) {
-                event.preventDefault();
-            }
-            return false;
-        }
-
-        if (typeof callback == "function") {
-            callback(parseInt(params.left) + disX, parseInt(params.top) + disY);
-        }
-    }
-};
-startDrag(interTit.intaCon)
+// var params = {
+//     left: 0,
+//     top: 0,
+//     currentX: 0,
+//     currentY: 0,
+//     flag: false
+// };
+// var getCss = function(o,key){
+//     return o.currentStyle? o.currentStyle[key] : document.defaultView.getComputedStyle(o,false)[key];
+// };
+//
+// var startDrag = function(bar, target, callback){
+//     if(getCss(target, "left") !== "auto"){
+//         params.left = getCss(target, "left");
+//     }
+//     if(getCss(target, "top") !== "auto"){
+//         params.top = getCss(target, "top");
+//     }
+//     bar.onmousedown = function(event){
+//         params.flag = true;
+//         if(!event){
+//             event = window.event;
+//             bar.onselectstart = function(){
+//                 return false;
+//             }
+//         }
+//         var e = event;
+//         params.currentX = e.clientX;
+//         params.currentY = e.clientY;
+//     };
+//     document.onmouseup = function(){
+//         params.flag = false;
+//         if(getCss(target, "left") !== "auto"){
+//             params.left = getCss(target, "left");
+//         }
+//         if(getCss(target, "top") !== "auto"){
+//             params.top = getCss(target, "top");
+//         }
+//     };
+//     document.onmousemove = function(event){
+//         var e = event ? event: window.event;
+//         if(params.flag){
+//             var nowX = e.clientX, nowY = e.clientY;
+//             var disX = nowX - params.currentX, disY = nowY - params.currentY;
+//             target.style.left = parseInt(params.left) + disX + "px";
+//             target.style.top = parseInt(params.top) + disY + "px";
+//             if (event.preventDefault) {
+//                 event.preventDefault();
+//             }
+//             return false;
+//         }
+//
+//         if (typeof callback == "function") {
+//             callback(parseInt(params.left) + disX, parseInt(params.top) + disY);
+//         }
+//     }
+// };
+// startDrag(interTit.intaCon)
