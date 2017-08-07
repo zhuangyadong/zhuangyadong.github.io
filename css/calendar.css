@@ -1,0 +1,138 @@
+﻿
+/*  公共样式    */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+ol, ul {
+    list-style: none
+}
+
+caption, th {
+    text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+q:before, q:after {
+    content: ''
+}
+
+abbr, acronym {
+    border: 0
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.dn {
+    display: none
+}
+
+/*日历 begin*/
+.data_box {
+    width: 260px;
+}
+
+/*.showDate {
+    width: 248px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    border: 1px solid #e1e1e1;
+    color: #999;
+    display: block;
+    cursor: pointer
+}*/
+
+.show_mn {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.sel_date {
+    background: #ffffff;
+    position: absolute;
+    right:27px;
+    top:-230px;
+    border:2px solid #CCCCCC;
+}
+
+.data_table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.data_table td {
+    text-align: center;
+    cursor: pointer;
+    height: 24px;
+    font-size: 14px;
+}
+
+.data_table td.active {
+    color: #fff;
+    background-color: #999
+}
+
+.data_table td.hover {
+    color: blue;
+}
+
+.showDate2 {
+    width: 35px;
+    padding: 3px 5px;
+    color: #999;
+    border: 1px solid #e1e1e1;
+    text-align: center
+}
+
+.showDate2.active {
+    border: 1px solid #c50000;
+}
+
+.prev_m, .next_m {
+    width: 10px;
+    height: 22px;
+    display: block;
+    background-color: #0094ff;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    font: bold 12px/22px "宋体"
+}
+
+.prev_y, .next_y {
+    width: 18px;
+    height: 22px;
+    display: block;
+    background-color: #0094ff;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    font: bold 12px/22px "宋体";
+    margin: 0 5px;
+}
